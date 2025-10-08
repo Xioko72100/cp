@@ -1,0 +1,292 @@
+ <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 1: document (讀取元素內容)</h2>
+                <div id="target_1" class="bg-blue-100 p-3 rounded mb-3">此 div 中的文字將會被 Brython 讀取出來。</div>
+                <div id="output_1" class="text-sm font-medium text-gray-600">讀取結果: [點擊下方按鈕以讀取]</div>
+                <button id="btn_1" class="mt-3 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">執行讀取</button>
+            </div>
+
+            <!-- 範例 2: document (寫入) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 2: document (寫入元素內容)</h2>
+                <input id="input_2" type="text" placeholder="輸入文字將被寫入下方..." class="border p-2 rounded w-full mb-3">
+                <div id="output_2" class="bg-yellow-100 p-3 rounded font-bold">這是目標寫入區域。</div>
+                <button id="btn_2" class="mt-3 bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded">執行寫入</button>
+            </div>
+
+            <!-- 範例 3: document (操作 CSS 類別) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 3: document (切換 CSS 類別)</h2>
+                <div id="target_3" class="bg-gray-100 p-4 rounded text-center transition duration-300">點擊按鈕切換邊框樣式。</div>
+                <button id="btn_3" class="mt-3 bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded">切換樣式</button>
+            </div>
+
+            <!-- 範例 4: html (建立單一元素) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 4: html (建立並插入 DIV 元素)</h2>
+                <div id="container_4" class="p-3 border border-dashed border-gray-400 min-h-[50px]">
+                    <!-- 新元素將被插入到這裡 -->
+                </div>
+                <button id="btn_4" class="mt-3 bg-teal-500 hover:bg-teal-600 text-white px-4 py-2 rounded">插入新的 DIV</button>
+            </div>
+
+            <!-- 範例 5: html (建立元素列表) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 5: html (使用迴圈建立 UL/LI 列表)</h2>
+                <ul id="list_5" class="list-disc ml-6">
+                    <!-- 列表項目將被 Brython 生成 -->
+                </ul>
+                <button id="btn_5" class="mt-3 bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded">生成水果列表</button>
+            </div>
+
+            <!-- 範例 6: bind (基本點擊事件) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 6: bind (按鈕點擊事件)</h2>
+                <button id="btn_6" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">點我觸發事件</button>
+                <div id="output_6" class="mt-3 text-red-600 font-bold"></div>
+            </div>
+
+            <!-- 範例 7: bind (輸入框變更事件) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 7: bind (輸入框內容變更事件)</h2>
+                <input id="input_7" type="number" value="10" class="border p-2 rounded w-1/3 mb-3">
+                <div id="output_7" class="mt-3 text-blue-600">當前值: 10</div>
+            </div>
+
+            <!-- 範例 8: timer (一次性延遲執行 set_timeout) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 8: timer (延遲執行)</h2>
+                <div id="output_8" class="text-gray-700">按下按鈕後，等待 2 秒...</div>
+                <button id="btn_8" class="mt-3 bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">開始 2 秒計時</button>
+            </div>
+
+            <!-- 範例 9: timer (重複執行 set_interval) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 9: timer (重複計數器)</h2>
+                <div id="output_9" class="text-3xl font-extrabold text-green-700">0</div>
+                <button id="btn_9_start" class="mt-3 bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded">開始計數</button>
+                <button id="btn_9_stop" class="mt-3 bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded">停止計數</button>
+            </div>
+
+            <!-- 範例 10: timer (動畫序列) -->
+            <div class="example-box">
+                <h2 class="text-xl font-semibold mb-2">範例 10: timer (動畫序列，機器人移動模擬)</h2>
+                <div id="box_10" class="w-10 h-10 bg-red-500 rounded-full mb-3 transition-all duration-300"></div>
+                <button id="btn_10" class="mt-3 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded">啟動移動序列</button>
+            </div>
+
+        </div>
+    </div>
+  <!-- Brython Python 程式碼區塊 -->
+    <script type="text/python">
+# 從 browser 模組中導入所需的物件
+# document: 代表 HTML 網頁文件，用於存取元素
+# html: 用於在 Python 中創建新的 HTML 元素
+# timer: 用於控制時間間隔和延遲執行 (setTimeout/setInterval)
+# bind: 用於將 Python 函數與網頁事件 (如點擊) 連結
+from browser import document, html, timer, bind
+
+# --- I. document 範例 (存取與修改) ---
+
+# 範例 1: document (讀取元素內容)
+@bind(document["btn_1"], "click") # 使用 bind 裝飾器將 ID 為 btn_1 的按鈕點擊事件，綁定到 example_1 函數
+def example_1(evt):
+    """讀取 ID 為 target_1 的 div 內容，並顯示在 output_1"""
+    
+    # 透過 document["ID名稱"] 獲取元素物件
+    target_element = document["target_1"]
+    
+    # 使用 .textContent 屬性讀取元素的純文字內容
+    content = target_element.textContent
+    
+    # document 寫入操作：將讀取結果寫入 output_1 元素的內容中
+    document["output_1"].textContent = f"讀取結果: {content}"
+    
+    # 註解：這展示了如何從 HTML 中獲取資料到 Python 變數中
+
+# 範例 2: document (寫入元素內容)
+@bind(document["btn_2"], "click")
+def example_2(evt):
+    """從輸入框讀取內容，並寫入 output_2"""
+    
+    # 讀取 ID 為 input_2 的輸入框的值 (使用 .value 屬性)
+    input_text = document["input_2"].value
+    
+    # document 寫入操作：將內容寫入 output_2 區域
+    document["output_2"].textContent = f"寫入成功！您輸入了: {input_text}"
+    
+    # 註解：這展示了如何將 Python 變數的內容輸出到網頁上
+
+# 範例 3: document (操作 CSS 類別)
+@bind(document["btn_3"], "click")
+def example_3(evt):
+    """使用 .classList.toggle() 切換 CSS 類別，改變元素的樣式"""
+    target_element = document["target_3"]
+    
+    # document 類別操作：使用 classList.toggle 方法來新增或移除 'active' 類別
+    # 'active' 類別在 <style> 標籤中定義了紅色的邊框樣式
+    target_element.classList.toggle("active")
+    
+    # 根據是否包含 'active' 類別來更新按鈕文字 (提供使用者反饋)
+    if "active" in target_element.classList: # 或使用 target_element.classList.contains("active")
+        document["btn_3"].textContent = "樣式已啟用 (點擊關閉)"
+    else:
+        document["btn_3"].textContent = "切換樣式"
+    
+    # 註解：這是實現網頁互動中「開關」視覺效果的常用方式
+
+
+# --- II. html 範例 (元素創建與插入) ---
+
+# 範例 4: html (建立單一元素)
+@bind(document["btn_4"], "click")
+def example_4(evt):
+    """使用 html.P 建立一個段落元素並插入到 DOM 中"""
+    container = document["container_4"]
+    
+    # html 創建操作：建立一個新的 P (段落) 元素，並賦予其內容和 CSS 類別
+    new_element = html.P("這是 Brython 創建的新段落！", 
+                         Class="text-sm italic text-blue-800 bg-blue-50 p-2 rounded mt-2")
+                         
+    # document 插入操作：使用 '<=' 運算符將新元素插入到容器 (container) 的內部
+    container <= new_element
+    
+    # 註解：html 讓您用 Python 語法創建 HTML 標籤，'<=' 則用於將其放入網頁
+
+# 範例 5: html (建立元素列表)
+@bind(document["btn_5"], "click")
+def example_5(evt):
+    """使用 Python 迴圈和 html.LI 建立列表"""
+    list_container = document["list_5"]
+    list_container.clear() # 執行前先清空舊的列表內容
+    
+    fruits = ["蘋果 (Apple)", "香蕉 (Banana)", "奇異果 (Kiwi)", "芒果 (Mango)"]
+    
+    # html 列表創建：使用 Python 列表推導式 (list comprehension) 創建多個 LI 元素
+    list_items = [html.LI(f, Class="text-gray-700 hover:text-green-600 transition") for f in fruits]
+    
+    # document 插入操作：將整個 LI 元素列表插入到 UL 容器中
+    list_container <= list_items
+    
+    # 註解：Python 的強大迴圈能力結合 html 模組，可以高效生成複雜的網頁結構
+
+# --- III. bind 範例 (事件綁定) ---
+
+# 範例 6: bind (基本點擊事件)
+# 這個函數在頂部已經被 @bind(document["btn_6"], "click") 裝飾器綁定
+@bind(document["btn_6"], "click")
+def example_6(evt):
+    """當按鈕被點擊時執行的函式"""
+    
+    # 執行 document 寫入操作來確認事件已被處理
+    document["output_6"].textContent = "✅ 事件成功觸發！ (bind 運行成功)"
+    
+    # 結合 timer 範例：使用 timer.set_timeout 延遲 1.5 秒後清除訊息
+    timer.set_timeout(lambda: document["output_6"].clear(), 1500) 
+    
+    # 註解：@bind 讓函數成為事件處理器，evt 參數包含事件資訊
+
+# 範例 7: bind (輸入框內容變更事件)
+# 綁定 'input' 事件，當輸入框內容改變時就會觸發 (即使只輸入一個字元)
+@bind(document["input_7"], "input") 
+def example_7(evt):
+    """當 input_7 的值改變時執行的函式"""
+    
+    # 讀取輸入框的新值
+    new_value = document["input_7"].value
+    
+    # document 寫入操作：更新顯示
+    document["output_7"].textContent = f"當前值: {new_value}"
+    
+    # 註解：'input' 事件是處理表單即時驗證或響應式更新的關鍵
+
+# --- IV. timer 範例 (時間控制與動畫) ---
+
+# 範例 8: timer (一次性延遲執行 set_timeout)
+@bind(document["btn_8"], "click")
+def example_8(evt):
+    """使用 set_timeout 延遲 2000 毫秒 (2 秒) 執行函式"""
+    document["output_8"].textContent = "⏳ 正在計時... 2 秒後完成"
+    
+    def delayed_action():
+        """這是等待 2 秒後才會執行的函數"""
+        document["output_8"].textContent = "🎉 延遲執行成功！ (2 秒已過)"
+        
+    # timer 核心應用：設定 2000 毫秒後執行 delayed_action 函數
+    timer.set_timeout(delayed_action, 2000)
+    
+    # 註解：set_timeout 常用於延遲動作、訊息淡出、或動畫計時
+
+# 範例 9: timer (重複執行 set_interval)
+counter = 0
+interval_handle = None # 用來儲存 interval 句柄，以便停止計時器
+
+@bind(document["btn_9_start"], "click")
+def start_interval(evt):
+    """啟動計數器，每 500ms (0.5 秒) 執行一次"""
+    global counter, interval_handle
+    if interval_handle is None: # 檢查是否已經在運行
+        counter = 0
+        def tick():
+            """這是每隔 500 毫秒會重複執行的函數"""
+            global counter
+            counter += 1
+            # document 寫入：更新計數器顯示
+            document["output_9"].textContent = str(counter)
+            
+        # timer 核心應用：設定每 500 毫秒重複執行 tick 函數
+        interval_handle = timer.set_interval(tick, 500)
+        document["btn_9_start"].disabled = True # 避免重複點擊
+        
+@bind(document["btn_9_stop"], "click")
+def stop_interval(evt):
+    """停止計數器"""
+    global interval_handle
+    if interval_handle is not None:
+        # timer 核心應用：清除計時器，停止重複執行
+        timer.clear_interval(interval_handle) 
+        interval_handle = None
+        document["output_9"].textContent += " (已停止)"
+        document["btn_9_start"].disabled = False
+        
+    # 註解：set_interval/clear_interval 是建立時鐘、遊戲循環或自動更新的基礎
+
+# 範例 10: timer (動畫序列)
+@bind(document["btn_10"], "click")
+def example_10(evt):
+    """使用遞迴 set_timeout 實現四步動畫序列"""
+    target_box = document["box_10"]
+    steps = 0
+    document["btn_10"].disabled = True
+
+    def animate_sequence():
+        """這個函數會在每次移動完成後，延遲後再次呼叫自身"""
+        nonlocal steps
+        delay = 500 # 延遲 500 毫秒 (動畫速度)
+        
+        # document 樣式操作：使用 style.transform 實現位移
+        if steps == 0:
+            target_box.style.transform = "translateX(100px)"
+        elif steps == 1:
+            target_box.style.backgroundColor = "#22c55e" # 變綠
+            target_box.style.transform = "translateX(100px) translateY(50px)"
+        elif steps == 2:
+            target_box.style.transform = "translateX(0px) translateY(50px)"
+        elif steps == 3:
+            target_box.style.backgroundColor = "#ef4444" # 變回紅
+            target_box.style.transform = "translateX(0px) translateY(0px)"
+            
+        steps += 1
+        
+        if steps <= 4:
+            # 關鍵的遞迴：設定延遲後，再次呼叫 animate_sequence，實現連續動作
+            timer.set_timeout(animate_sequence, delay)
+        else:
+            # 動作完成，解除按鈕禁用
+            document["btn_10"].disabled = False
+            
+    # 啟動動畫序列
+    animate_sequence()
+
+    </script>
+</body>
+</html>
