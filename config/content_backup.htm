@@ -5,10 +5,15 @@
 <p>w7: Brython 是什麼？如何在瀏覽器配置 Brython 環境？ Brython 能做什麼？ (<a href="https://mde.tw/cp2025/content/Brython.html">Brython</a>,<span> </span><a href="https://mde.tw/cp2025/content/Robot_ex.html">Examples</a>)</p>
 <p>Brython是一個用javascript編寫的東西，他把python及時轉換成js給網頁，讓瀏覽器可以直接透過python執行，配置方法就是在html的&lt;head&gt;標籤裡面加入</p>
 <p>&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython.min.js"&gt;&lt;/script&gt;<br/>&lt;script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.10.7/brython_stdlib.min.js"&gt;&lt;/script&gt;</p>
+<p>然後在 <code>&lt;body&gt;</code> 標籤中加入 <code>onload="brython()"</code>，告訴瀏覽器網頁載入後啟動 Brython 引擎。使用 <code>&lt;script type="text/python"&gt;</code> 標籤來寫 Python。</p>
+<p>Brython可以抓取 <code>id</code>、更改 CSS 樣式、動態新增 HTML 標籤。綁定滑鼠點擊、鍵盤輸入、視窗滾動等事件。可以使用 <code>math</code>, <code>datetime</code>, <code>json</code>, 等大部分 Python 標準庫。 支援 HTML5 <code>canvas</code> 繪圖，適合製作簡單的網頁遊戲或數據視覺化。就像老師brython分頁裡的機器人模型。Brython 可以呼叫現有的 JavaScript 函式庫。</p>
 <p></p>
 <p>w10: 如何在瀏覽器中模擬機器人作動？ (<a href="https://mde.tw/cp2025/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/58fed8bd2f5be98a6456a8dcae512011/raw/4019adba4ee4be19c35982d835bad8e7d83a7b2f/brython_robot4_ex1.py">機器人作動</a>)</p>
+<p>老師使用的方法是使用 Brython + HTML5 Canvas，如果要3D的就要用到Three.js。利用 Python 邏輯計算座標，再透過 <code>browser.timer</code> 定時刷新畫布。把要建立的指令都打出來就好。</p>
 <p>w14: 在瀏覽器中模擬機器人作動的目的是什麼？ (<a href="https://mde.tw/cp2025/downloads/otto_robot.7z">otto_robot.7z</a>, <a href="https://mde.tw/cad2025/content/Homework.html">Plotter</a>, <a href="https://mde.tw/cp2025/downloads/open_duck_mini.7z">open_duck_mini.7z</a><span> </span>,<a href="https://webots.cloud/AcTNYs0">https://webots.cloud/AcTNYs0</a>)</p>
+<p>學習利用python語法，以及透過pythion語法去控制機器人。使用瀏覽器是因為更方便。學習迴圈，以及定義右轉移動if迴圈，while迴圈...。</p>
 <p>w17 (<span>1b 採 Youtube 影片簡報</span>): 計算機程式課程學到了什麼？</p>
+<p>我學到了很多github相關的使用方法，也因為這堂課讓我接觸到網頁設計及網頁語法，我自己稍微探索了HTML、CSS、JAVASCRIPT，我目前js最不熟。我學最多以及稍微熟悉的可能是終端機了，常用到終端機，我在這堂課還學會了如何抓github上的檔案下來，以及把自己新增的東西推到自己與小組的倉儲裡面。以及協作的方法。</p>
 <p>w18: 課程總結</p><h1>Examples</h1>
 <script src="/static/brython.js"></script>
 <script src="/static/brython_stdlib.js"></script>
@@ -278,6 +283,7 @@ div <= html.P("✅ Brython 成功插入的段落！")
 </script>
 <h1>期末</h1>
 <p style="text-align: left;"><span>三個程式的執行過程影片:<a href="https://youtu.be/1MvCVcNuGXw">https://youtu.be/1MvCVcNuGXw</a></span></p>
+<p style="text-align: left;"><span>期末遊戲修改影片:</span></p>
 <p>我在期末的「各組學員只要能在<span>下週上課之前</span>，提出在近端<span>成功執行</span>上述三個程式的過程影片，上傳到 Youtube, 加上操作心得。並選擇<span>其中一個套件</span>，<span>充分了解其架構與內容，而且能與其他組員討論如何修改或新增功能，最後將歷程寫成期末專案報告者</span>，就可在下週自評時段<span>登錄 &gt; 60 分以上的學期成績</span>。」中，選擇了cp_final_ex，這個圓圈點擊檔案修改。因為只有單純圓圈點擊程式太無聊了我又想說來點阻礙，所以我增加炸彈的扣分機制，但我想說有扣分就有加分，所以又新增了金幣。首先我去找了<img alt="" height="44" src="/images/coin.png" width="44"/><img alt="" height="79" src="/images/bomb.png" width="79"/>這兩個去背圖。接著就是把圖片放到名為static的資料夾，但是老師原本的檔案裡因為沒有用到圖片所以沒有，我新增了。</p><h1>Brython</h1>
 <p><a href="https://brython.info/">Brython</a> 是一個將 <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> 語法編譯為 <a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript">JavaScript</a> 的工具，能直接在瀏覽器中以 <a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a> 撰寫前端網頁程式。</p>
 <p><button id="add1to100">1 add to 100</button><button id="robot1">機器人巡邏</button><button id="free_walk">自由行</button></p>
