@@ -1,5 +1,6 @@
 from browser import document, html, timer
 
+
 CELL_SIZE = 40
 WALL_THICKNESS = 6
 IMG_PATH = "https://mde.tw/cp2025/reeborg/src/images/"
