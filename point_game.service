@@ -1,0 +1,14 @@
+[Unit]
+Description=Point Game
+After=network.target
+
+[Service]
+User=pj2022
+WorkingDirectory=/home/pj2022/point_game
+ExecStart=/home/pj2022/point_game/venv/bin/python3 /home/pj2022/point_game/server.py
+Restart=always
+Environment=PATH=/home/pj2022/point_game/venv/bin:/usr/bin:/bin
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
