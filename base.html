@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Brython 點擊遊戲{% endblock %}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding-top: 60px; background-color: #f4f4f9; }
+        .navbar { background-color: #333; color: white; padding: 15px; position: fixed; width: 100%; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
+        .navbar a { color: white; text-decoration: none; margin-right: 20px; }
+        .container { width: 80%; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .flash { padding: 10px; margin-bottom: 10px; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .danger { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .info { background-color: #cce5ff; color: #004085; border: 1px solid #b8daff; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div>
+            <a href="{{ url_for('index') }}">🎮 首頁/英雄榜</a>
+            <a href="{{ url_for('game') }}">🕹️ 開始遊戲</a>
+        </div>
+        <div>
+            {% if 'username' in session %}
+                <span>歡迎, {{ session['username'] }}!</span>
+                <a href="{{ url_for('logout') }}">🚪 登出</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">👤 登入</a>
+                <a href="{{ url_for('register') }}">📝 註冊</a>
+            {% endif %}
+        </div>
+    </nav>
+    
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

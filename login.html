@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}登入{% endblock %}
+
+{% block content %}
+    <h2>👤 使用者登入</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        <p>
+            {{ form.username.label }}: {{ form.username() }}
+        </p>
+        <p>
+            {{ form.password.label }}: {{ form.password() }}
+        </p>
+        <p><input type="submit" value="登入"></p>
+    </form>
+{% endblock %}

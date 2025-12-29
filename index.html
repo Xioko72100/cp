@@ -1,7 +1,28 @@
-<html>
-<head>
-<meta http-equiv="refresh" content="0; url=content/index.html" />
-</head>
-<body>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}英雄榜{% endblock %}
+
+{% block content %}
+    <h2>🏆 得分英雄榜 (Top 10)</h2>
+    <p>點擊次數越多，排名越高！請登入或註冊以開始遊戲。</p>
+    
+    {% if leaderboard %}
+    <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+        <tr>
+            <th style="padding: 10px;">排名</th>
+            <th style="padding: 10px;">使用者名稱</th>
+            <th style="padding: 10px;">最高分數</th>
+        </tr>
+        {% for entry in leaderboard %}
+        <tr>
+            <td style="padding: 10px;">{{ loop.index }}</td>
+            <td style="padding: 10px;">{{ entry.username }}</td>
+            <td style="padding: 10px;">{{ entry.score }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>目前沒有分數記錄，快來當第一個英雄吧！</p>
+    {% endif %}
+
+{% endblock %}

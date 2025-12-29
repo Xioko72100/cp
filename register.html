@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}註冊{% endblock %}
+
+{% block content %}
+    <h2>📝 註冊新帳號</h2>
+
+    <div style="background-color: #f0f8ff; border: 1px solid #cceeff; padding: 15px; border-radius: 5px; margin-bottom: 20px; text-align: left;">
+        <h3>📌 註冊原則與要求</h3>
+        <ul>
+            <li>**使用者名稱唯一性：** 您選擇的名稱必須是系統中未被使用的。</li>
+            <li>**使用者名稱長度：** 必須介於 **4 到 25 個字元**之間。</li>
+            <li>**密碼要求：** 必須與「重複密碼」欄位輸入的內容**完全一致**。</li>
+            <li>**資料安全性：** 您的密碼將會被加密 (雜湊) 後儲存在資料庫中，確保您的隱私安全。</li>
+        </ul>
+        <p style="margin-top: 10px; font-size: 0.9em; color: #555;">* 所有欄位皆為必填項目。</p>
+    </div>
+    
+    <form method="POST" action="{{ url_for('register') }}">
+        <p>
+            {{ form.username.label }}: {{ form.username(size=25, placeholder="4-25 個字元") }}
+            {% if form.username.errors %}<span style="color: red;">{{ form.username.errors[0] }}</span>{% endif %}
+        </p>
+        <p>
+            {{ form.password.label }}: {{ form.password(placeholder="請輸入密碼") }}
+            {% if form.password.errors %}<span style="color: red;">{{ form.password.errors[0] }}</span>{% endif %}
+        </p>
+        <p>
+            {{ form.confirm.label }}: {{ form.confirm(placeholder="請再次輸入密碼") }}
+        </p>
+        <p><input type="submit" value="註冊"></p>
+    </form>
+{% endblock %}
