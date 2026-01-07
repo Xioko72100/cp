@@ -1,0 +1,45 @@
+[33m4418b6a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m please66555666
+[33m913f3bc[m Delete app.py
+[33m14300dc[m Delete point_game.service
+[33ma0f757e[m Delete server.py
+[33m9758cc4[m Delete acp.bat
+[33mc2f50f1[m Delete deployment_linux_readme.txt
+[33m0ce1f8a[m Delete database.db
+[33m5284b1e[m Delete db_browser.7z.003
+[33m17f5c43[m Delete db_browser.7z.002
+[33m8ffed5c[m Delete db_browser.7z.001
+[33m4ae51cb[m Delete acp
+[33m3a6da91[m Delete README.md
+[33m3a086d6[m Delete templates-cp directory
+[33mc931322[m Delete static directory
+[33maf231c0[m Update and rename register.html to templates-cp/register.html
+[33m0b97890[m Update and rename login.html to templates-cp/login.html
+[33m7a91e3c[m Update and rename index.html to templates-cp/index.html
+[33m99a8915[m Update and rename game.html to templates-cp/game.html
+[33m942394d[m Update and rename base.html to templates-cp/base.html
+[33me05d6cf[m templates2/
+[33mef7d7b0[m Rename coin.png to static/coin.png
+[33mb2f6da9[m Rename bomb.png to static/bomb.png
+[33m2934f69[m Add files via upload
+[33m74b6bdf[m others
+[33mfd5f8cf[m :D 502
+[33med10c90[m Add blank line for code readability
+[33m519dc5c[m 10000.0
+[33m5f0d76c[m 000.10
+[33mb50cae9[m 0002 0002
+[33m9c9f773[m 心得1
+[33m64ea864[m 心得報告增加1
+[33mba6a4c5[m Merge branch 'main' of https://github.com/Xioko72100/cp
+[33m1ff3fcf[m plus yt
+[33mbcb9d86[m 加上yt連結
+[33mb0b1d19[m Create horizon1
+[33m3faa527[m Create around4.py
+[33m9981843[m Create around3.py
+[33m75071df[m Create around2.py
+[33mbb573b8[m Create around1.py
+[33m60f4763[m 1119
+[33mfc80dcb[m[33m ([m[1;31morigin/gh-pages[m[33m)[m W5
+[33m110382f[m w2_採垂直路線繞行所有網格的版本
+[33m1c64cbe[m Rename 25251008 to 20251008
+[33m71c5254[m Create 20251008
+[33m5ba4b2b[m Initial commit

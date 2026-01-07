@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li><a href='心得報告.html'>心得報告</a><li><a href='Examples.html'>Examples</a><li><a href='W5 Examples.html'>W5 Examples</a><li><a href='期末.html'>期末</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Pyodide3.html'>Pyodide3</a></li>
+                     <li><a href='About.html'>About</a><li><a href='心得報告.html'>心得報告</a><li><a href='Examples.html'>Examples</a><li><a href='W5 Examples.html'>W5 Examples</a><li><a href='期末.html'>期末</a><li class='has-children'><a href='Brython.html'>Brython</a><ul class='dropdown'><li><a href='Pyodide3.html'>Pyodide3</a></li></ul><li><a href='Final.html'>Final</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Brython << <a href='Brython.html'>Previous</a> <br /><h1>Pyodide3</h1>
+    <div id="tipue_search_content">Brython << <a href='Brython.html'>Previous</a> <a href='Final.html'>Next</a> >> Final<br /><h1>Pyodide3</h1>
 <p>Pyodide3 則在 <a href="https://mde.tw/cp2025/content/Pyodide.html">Pyodide</a> 與 <a href="https://mde.tw/cp2025/content/Pyodide2.html">Pyodide2</a> 頁面架構下，進一步導入 <a href="https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/9f43571ec070ea3e24b083525ee27275a96efcc8/robot_w_world.py">robot_w_world.py</a>，在既有的水平圍牆 <a href="https://mde.tw/cp2025/reeborg/src/images/north.png">north.png</a> 與垂直圍牆 <a href="https://mde.tw/cp2025/reeborg/src/images/east.png">east.png</a> 檔案之外，加入 <a href="https://mde.tw/cp2025/reeborg/src/images/carrot.png">carrot.png</a>、<a href="https://mde.tw/cp2025/reeborg/src/images/grass.png">grass.png</a> 與 <a href="https://mde.tw/cp2025/reeborg/src/images/pale_grass.png">pale_grass.png</a> 等圖檔。並且擴充可從 URL 讀進 json 格式的 world 變數功能，以便製作出更多元的場景任務，要求機器人執行。</p>
 <p>其中 src URL 變數，可以將網路上的機器人控制程式導入 Pyodide3 頁面外，world URL 變數則可以導入源自 <a href="https://mde.tw/reeborg">Reeborg</a> 機器人程式所設定的 json 格式場景。</p>
 <p>由於 Reeborg 系統中的 png 圖檔均非透明背景，<a href="https://gist.githubusercontent.com/mdecycu/ec4bb35dd0769e7a83d2a9fa57878a67/raw/9f43571ec070ea3e24b083525ee27275a96efcc8/robot_w_world.py">robot_w_world.py</a> 必須利用 HTML 中的 CANVAS，將關鍵的白色背景，以透明的方式顯示。</p>
@@ -368,7 +368,8 @@ sys.stderr = JsWriter()
   }
 }
 </script>
-</p><br />Brython << <a href='Brython.html'>Previous</a> </div>
+</p>
+<br />Brython << <a href='Brython.html'>Previous</a> <a href='Final.html'>Next</a> >> Final</div>
         
     <!-- footer -->
       <div class="container">
